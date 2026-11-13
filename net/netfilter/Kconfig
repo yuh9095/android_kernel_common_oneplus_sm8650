@@ -792,6 +792,7 @@ config NETFILTER_XT_SET
 	tristate 'set target and match support'
 	depends on IP_SET
 	depends on NETFILTER_ADVANCED
+	default y
 	help
 	  This option adds the "SET" target and "set" match.
 

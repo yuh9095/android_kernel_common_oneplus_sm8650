@@ -179,6 +179,7 @@ config TMPFS
 config TMPFS_POSIX_ACL
 	bool "Tmpfs POSIX Access Control Lists"
 	depends on TMPFS
+	default y
 	select TMPFS_XATTR
 	select FS_POSIX_ACL
 	help
@@ -197,7 +198,7 @@ config TMPFS_POSIX_ACL
 config TMPFS_XATTR
 	bool "Tmpfs extended attributes"
 	depends on TMPFS
-	default n
+	default y
 	help
 	  Extended attributes are name:value pairs associated with inodes by
 	  the kernel or by users (see the attr(5) manual page for details).
