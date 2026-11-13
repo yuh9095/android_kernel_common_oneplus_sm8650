@@ -165,6 +165,7 @@ source "drivers/net/team/Kconfig"
 
 config MACVLAN
 	tristate "MAC-VLAN support"
+	default y
 	help
 	  This allows one to create virtual interfaces that map packets to
 	  or from specific MAC addresses to a particular interface.
