@@ -185,6 +185,7 @@ config IP_NF_TARGET_REJECT
 	depends on IP_NF_FILTER
 	select NF_REJECT_IPV4
 	default m if NETFILTER_ADVANCED=n
+	default y
 	help
 	  The REJECT target allows a filtering rule to specify that an ICMP
 	  error should be issued in response to an incoming packet, rather

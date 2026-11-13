@@ -376,6 +376,7 @@ config DEFAULT_HOSTNAME
 
 config SYSVIPC
 	bool "System V IPC"
+	default y
 	help
 	  Inter Process Communication is a suite of library functions and
 	  system calls which let processes (running programs) synchronize and
@@ -402,6 +403,7 @@ config SYSVIPC_COMPAT
 config POSIX_MQUEUE
 	bool "POSIX Message Queues"
 	depends on NET
+	default y
 	help
 	  POSIX variant of message queues is a part of IPC. In POSIX message
 	  queues every message has a priority which decides about succession
@@ -1211,7 +1213,8 @@ endif # CGROUPS
 menuconfig NAMESPACES
 	bool "Namespaces support" if EXPERT
 	depends on MULTIUSER
-	default !EXPERT
+	default y
+	select PID_NS
 	help
 	  Provides the way to make tasks work with different objects using
 	  the same id. For example same IPC id may refer to different objects
@@ -1245,7 +1248,7 @@ config IPC_NS
 
 config USER_NS
 	bool "User namespace"
-	default n
+	default y
 	help
 	  This allows containers, i.e. vservers, to use user namespaces
 	  to provide different user info for different servers.

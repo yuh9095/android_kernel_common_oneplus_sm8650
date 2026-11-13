@@ -792,6 +792,7 @@ config NETFILTER_XT_SET
 	tristate 'set target and match support'
 	depends on IP_SET
 	depends on NETFILTER_ADVANCED
+	default y
 	help
 	  This option adds the "SET" target and "set" match.
 
@@ -961,7 +962,7 @@ config NETFILTER_XT_TARGET_LOG
 	tristate "LOG target support"
 	select NF_LOG_SYSLOG
 	select NF_LOG_IPV6 if IP6_NF_IPTABLES
-	default m if NETFILTER_ADVANCED=n
+	default y
 	help
 	  This option adds a `LOG' target, which allows you to create rules in
 	  any iptables table which records the packet header to the syslog.
@@ -1157,7 +1158,7 @@ comment "Xtables matches"
 
 config NETFILTER_XT_MATCH_ADDRTYPE
 	tristate '"addrtype" address type match support'
-	default m if NETFILTER_ADVANCED=n
+	default y
 	help
 	  This option allows you to match what routing thinks of an address,
 	  eg. UNICAST, LOCAL, BROADCAST, ...
@@ -1573,6 +1574,7 @@ config NETFILTER_XT_MATCH_REALM
 config NETFILTER_XT_MATCH_RECENT
 	tristate '"recent" match support'
 	depends on NETFILTER_ADVANCED
+	default y
 	help
 	This match is used for creating one or many lists of recently
 	used addresses and then matching against that/those list(s).
