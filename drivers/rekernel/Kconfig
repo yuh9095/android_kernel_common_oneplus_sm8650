@@ -1,5 +1,5 @@
 config REKERNEL
 	tristate "Re:Kernel"
-	default n
+	default y
 	help
 	  Support Re:Kernel for better Tombstone functionality.
